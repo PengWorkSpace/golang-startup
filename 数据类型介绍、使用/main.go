@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
 	//bool类型
@@ -43,10 +46,26 @@ func main() {
 	delete(dict, "lisi")
 	fmt.Println(dict)
 
+	//方法使用
+	p.showinfo()
+
+	//函数使用
+	display("akoncoder", 28)
+
 }
 
 //结构体类型
 type person struct {
 	age  int
 	name string
+}
+
+// 方法，归属于person
+func (p person) showinfo() {
+	fmt.Println("name is " + p.name + "; age is " + strconv.Itoa(p.age))
+}
+
+func display(name string, age int) {
+
+	fmt.Println("name is " + name + ";" + "age is " + strconv.Itoa(age))
 }
