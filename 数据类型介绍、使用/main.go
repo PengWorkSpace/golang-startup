@@ -52,6 +52,12 @@ func main() {
 	//函数使用
 	display("akoncoder", 28)
 
+	//interface 使用
+
+	sayStr := p.Say("hi")
+	walkStr := p.Walk("walk")
+	fmt.Println(sayStr)
+	fmt.Println(walkStr)
 }
 
 //结构体类型
@@ -65,7 +71,22 @@ func (p person) showinfo() {
 	fmt.Println("name is " + p.name + "; age is " + strconv.Itoa(p.age))
 }
 
+//函数
 func display(name string, age int) {
 
 	fmt.Println("name is " + name + ";" + "age is " + strconv.Itoa(age))
+}
+
+type rabbitMachine interface {
+	Say(s string) string
+	Walk(w string) string
+}
+
+func (p person) Say(s string) string {
+
+	return "i am " + p.name + "; i can say " + s
+}
+
+func (p person) Walk(w string) string {
+	return "i am " + p.name + "; i can " + w
 }
