@@ -27,6 +27,16 @@ func main() {
 	}
 
 	fmt.Println(boyStr)
+
+	//反序列化成map
+	var a map[string]interface{}
+	var jStr = "{\"id\":1,\"age\":28,\"name\":\"akoncoder\",\"address\":\"上海市\"}"
+	err2 := json.Unmarshal([]byte(jStr), &a)
+	if err2 != nil {
+		fmt.Println("反序列化失败")
+	}
+	fmt.Println(a)
+
 }
 
 //使用tag `json:"name"` 指定返回给客户端使用的格式
