@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"strconv"
+
+	"github.com/davecgh/go-spew/spew"
 )
 
 func main() {
@@ -58,6 +60,7 @@ func main() {
 	walkStr := p.Walk("walk")
 	fmt.Println(sayStr)
 	fmt.Println(walkStr)
+	spew.Dump(sayStr)
 }
 
 //结构体类型
