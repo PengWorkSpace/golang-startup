@@ -29,9 +29,10 @@ func main() {
 	fmt.Println(boyStr)
 }
 
+//使用tag `json:"name"` 指定返回给客户端使用的格式
 type person struct {
-	ID      int
-	Age     int
-	Name    string
-	Address string
+	ID      int    `json:"id"`
+	Age     int    `json:"age"`
+	Name    string `json:"name"`
+	Address string `json:"address"`
 }
